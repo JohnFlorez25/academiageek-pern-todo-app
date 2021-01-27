@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "536ce858-0875-4a10-bf01-6a71776e1125",
+		"name": "PERN_TODO",
+		"description": "PERN todo petitions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST_todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"I need to clean my car\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5057/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5057",
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5057/todos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5057",
+					"path": [
+						"todos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_todo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5057/todos/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5057",
+					"path": [
+						"todos",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_todo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"I need to clean my floor\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5057/todos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5057",
+					"path": [
+						"todos",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_todo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5057/todos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5057",
+					"path": [
+						"todos",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

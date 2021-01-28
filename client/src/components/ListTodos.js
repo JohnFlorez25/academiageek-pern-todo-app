@@ -9,7 +9,7 @@ const ListTodos = () => {
 
   const deleteTodo = async (id) => {
       try {
-          await fetch(`http://localhost:5057/todos/${id}`, {
+          await fetch(`http://35.226.85.125:5057/todos/${id}`, {
               method: "DELETE"
           });
 
@@ -24,7 +24,7 @@ const ListTodos = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch('http://localhost:5057/todos');
+      const response = await fetch('http://35.226.85.125:5057/todos');
       const jsonData = await response.json();
 
       //console.log(jsonData);

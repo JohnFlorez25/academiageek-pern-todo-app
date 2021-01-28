@@ -1,27 +1,42 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ListTodos = () => {
+  const [todos, setTodos] = useState([]);
 
-    const [todos, setTodos] = useState([]);
+  //delete todo function
 
-    const getTodos = async () => {
-        try {
-            const response = await fetch("http://localhost:5057/todos");
-            const jsonData = await response.json();
+  const deleteTodo = async (id) => {
+      try {
+          await fetch(`http://localhost:5057/todos/${id}`, {
+              method: "DELETE"
+          });
 
-            //console.log(jsonData);
+          //console.log(deletedTodo);
+          setTodos(todos.filter(todo => todo.todo_id !== id));
 
-            setTodos(jsonData);
+      } catch (error) {
+          console.log(error.message);
+      }
+  }
 
-        } catch (error) {
-            console.error(error.message);
-        }
+
+  const getTodos = async () => {
+    try {
+      const response = await fetch('http://localhost:5057/todos');
+      const jsonData = await response.json();
+
+      //console.log(jsonData);
+
+      setTodos(jsonData);
+    } catch (error) {
+      console.error(error.message);
     }
-    useEffect(()=>{
-        getTodos();
-    }, []);
+  };
+  useEffect(() => {
+    getTodos();
+  }, []);
 
-    //console.table(todos);
+  //console.table(todos);
 
   return (
     <>
@@ -34,17 +49,21 @@ const ListTodos = () => {
           </tr>
         </thead>
         <tbody>
-            {/*<tr>
+          {/*<tr>
             <td>John</td>
             <td>Doe</td>
             <td>john@example.com</td>
           </tr> */}
-          {todos.map(todo => (
-              <tr>
-                  <td>{todo.description}</td>
-                  <td>Edit</td>
-                  <td>Delete</td>
-              </tr>
+          {todos.map((todo) => (
+            <tr key={`description-${todo.todo_id}`}>
+              <td>{todo.description}</td>
+              <td>Edit</td>
+              <td>
+                <button className='btn btn-danger' onClick={() => deleteTodo(todo.todo_id)}>
+                  Delete
+                </button>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>

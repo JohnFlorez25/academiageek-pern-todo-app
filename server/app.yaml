@@ -1,0 +1,4 @@
+service: backend
+runtime: nodejs10
+beta_settings:
+  cloud_sql_instances: [INSTANCE_CONNETION_NAME]

@@ -1,6 +1,6 @@
 # PERN project in GCP - App Engine 
 
-- [Documentación knex](https://www.npmjs.com/package/knex)
+- [Documentación knex](http://knexjs.org/)
 - [Conexión con Cloud SQL](https://cloud.google.com/sql/docs/postgres/connect-app-engine-standard?hl=es-419#public-ip-default_1)
 - [Documentación Conexión CloudSQL Proxy ](https://cloud.google.com/sql/docs/postgres/connect-app-engine-standard?hl=es-419#public-ip-default_1)
 - [Repositorio Ejemplo de conexión con PostgreSQL](https://github.com/GoogleCloudPlatform/nodejs-docs-samples/blob/master/cloud-sql/postgres/knex/server.js)
